@@ -1,5 +1,5 @@
 {
-  "name": "react-2",
+  "name": "redux-result-1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,14 +8,8 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gedjerone/result-school-react-02.git"
-  },
-  "homepage": "https://gedjerone.github.io/result-school-react-02",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -37,6 +31,6 @@
     "prop-types": "^15.8.1",
     "react-icons": "^4.12.0",
     "tailwindcss": "^3.3.5",
-    "vite": "^5.0.0"
+    "vite": "^5.0.5"
   }
 }
