@@ -29,5 +29,4 @@ const area = (state = {
             return state
     }
 }
-
 export const store = createStore(area)

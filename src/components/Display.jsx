@@ -2,12 +2,18 @@ import PropTypes from "prop-types";
 import {checkPlayer} from "../game.js";
 import {FaArrowRotateLeft} from "react-icons/fa6";
 import {store} from "../redux.store.js";
+import {useDispatch} from "react-redux";
 
 export const Display = ({winner, player}) => {
-    const resetGame = () => {
-        store.dispatch({
-            type: 'SET_INITIAL',
-        })
+
+    const setInitial = () => ({
+        type: 'SET_INITIAL'
+    })
+
+    const dispatch = useDispatch()
+
+    const onResetGame = () => {
+        dispatch(setInitial())
     }
 
     return (
@@ -18,7 +24,7 @@ export const Display = ({winner, player}) => {
                         <div className={'flex flex-row gap-4 items-center'}>
                             <button
                                 className={'px-4 py-4 rounded-full'}
-                                onClick={() => resetGame()}>
+                                onClick={() => onResetGame()}>
                                 <FaArrowRotateLeft className={'hover:text-blue-600 text-2xl'}/>
                             </button>
                         <p

@@ -1,14 +1,19 @@
 import PropTypes from "prop-types";
 import {Tile} from "./Tile.jsx";
 import {store} from "../redux.store.js";
+import {useDispatch} from "react-redux";
 
 export const GameArea = ({tiles, disabled}) => {
 
-    const setTile = (index) => {
-        store.dispatch({
-            type: 'SET_TILES',
-            index: index
-        })
+    const setTiles = (index) => ({
+        type: 'SET_TILES',
+        index: index
+    })
+
+    const dispatch = useDispatch()
+
+    const onSetTiles = (index) => {
+        dispatch(setTiles(index))
     }
 
     return (
@@ -17,7 +22,7 @@ export const GameArea = ({tiles, disabled}) => {
                 <Tile
                     tile={value}
                     index={i}
-                    setTile={setTile}
+                    setTile={onSetTiles}
                     disabled={disabled}
                     key={i}
                 />
